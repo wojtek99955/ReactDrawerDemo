@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
 function About({ navigation }) {
   return (
@@ -10,7 +10,13 @@ function About({ navigation }) {
         optio velit, labore corporis. Laudantium architecto nemo amet deleniti
         vero, corporis illum?
       </Text>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.goBack()}
+        activeOpacity={0.7}
+      >
+        <Text style={styles.buttonText}>Go Back Home</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -32,5 +38,15 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: "center",
     marginBottom: 30,
+  },
+  button: {
+    backgroundColor: "blue",
+    paddingHorizontal: 30,
+    paddingVertical: 20,
+    borderRadius: 10,
+  },
+  buttonText: {
+    fontSize: 20,
+    color: "white",
   },
 });
